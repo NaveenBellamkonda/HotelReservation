@@ -6,7 +6,8 @@ public class Room implements IRoom{
     RoomType roomType;
     Boolean free;
 
-    public Room(String roomNumber,Double price,RoomType roomType){
+    public Room(){
+        //super();
         this.roomNumber=roomNumber;
         this.price=price;
         this.roomType=roomType;
@@ -21,9 +22,19 @@ public class Room implements IRoom{
     public Double getRoomPrice(){
         return price;
     }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
     public RoomType getRoomType(){
         return roomType;
     }
+
+    public void setRoomType(RoomType roomType) {
+        this.roomType = roomType;
+    }
+
     public Boolean isFree() {
         return free;
     }
