@@ -9,17 +9,17 @@ public class Room implements IRoom{
     public Room(String roomNumber,Double price,RoomType roomType){
         this.roomNumber=roomNumber;
         this.price=price;
-        this.roomType=roomType
+        this.roomType=roomType;
     }
 
     public String getRoomNumber(){
         return roomNumber;
     }
-    public String setRoomNumber(){
+    public void setRoomNumber(String roomNumber){
         this.roomNumber=roomNumber;
     }
     public Double getRoomPrice(){
-        return price
+        return price;
     }
     public RoomType getRoomType(){
         return roomType;

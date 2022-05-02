@@ -12,7 +12,7 @@ public class Customer {
 
     public Customer(String firstName,String lastName,String email){
         if (!pattern.matcher(email).matches()){
-            throw new IllegalArgumentException("Please enter a valid emailID")
+            throw new IllegalArgumentException("Please enter a valid emailID");
         }
         this.firstName=firstName;
         this.lastName=lastName;
