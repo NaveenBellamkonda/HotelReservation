@@ -21,7 +21,7 @@ public class ReservationService {
     public Reservation reserveARoom(Customer customer,IRoom room,Date CheckInDate,Date CheckOutDate){
         Reservation reservation=new Reservation(customer,room,CheckInDate,CheckOutDate);
         Collection<Reservation> customerReservations=getCustomersReservation(customer);
-        if (customerReservations==null){
+        if (customerReservations == null){
             customerReservations=new LinkedList<Reservation>();
         }
         customerReservations.add(reservation);
