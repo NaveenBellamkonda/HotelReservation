@@ -33,7 +33,7 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public String getEmail() {
+    public String getEmail(Customer customer) {
         return email;
     }
     public void setEmail(String email) {
