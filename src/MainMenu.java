@@ -26,7 +26,7 @@ public class MainMenu {
                 line = scanner.nextLine();
                 if (line.length() == 1) {
                     switch (line.charAt(0)) {
-                        case '1:
+                        case '1':
                             findAndReserveARoom();
                             break;
                         case '2':
@@ -43,16 +43,16 @@ public class MainMenu {
                             break;
                         default:
                             System.out.println("InvalidAction\n");
-                    }else{
-                        System.out.println("Please enter a valid Number");
                     }
-                    while (line.charAt(0) != 5 || line.length() != 1) ;
+                }else {
+                    System.out.println("Please enter a valid Number");
                 }
-            }catch(StringIndexOutOfBoundsException) {
+            }while (line.charAt(0) != 5 || line.length() != 1) ;
+        }catch(StringIndexOutOfBoundsException ex) {
                     System.out.println("Empty Input Received");
 
-            }
         }
+
     }
     public static void findAndReserveARoom(){
         final Scanner scanner= new Scanner(System.in);
@@ -67,7 +67,7 @@ public class MainMenu {
                 System.out.println("No Rooms Found");
             }else {
                 printAvailableRooms(availableRooms);
-                reserveARoom(checkIn,checkOut,availableRooms);
+                reserveARoom(scanner,checkIn,checkOut,availableRooms);
             }
         }
     }
@@ -151,7 +151,7 @@ public class MainMenu {
     }
     public static void printmainmenu(){
         System.out.println("\nWelcome to Hotel Reservation Application\n"+
-                "-------------------------------\n"
+                "-------------------------------\n"+
                 "1. Find and Reserve a room\n"+
                 "2. See my reservations\n"+
                 "3. Create an account\n"+

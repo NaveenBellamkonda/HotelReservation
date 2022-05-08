@@ -6,8 +6,9 @@ public class Room implements IRoom{
     RoomType roomType;
     Boolean free;
 
-    public Room(){
-        //super();
+
+
+    public Room(String roomNumber, Double price, RoomType roomType) {
         this.roomNumber=roomNumber;
         this.price=price;
         this.roomType=roomType;
