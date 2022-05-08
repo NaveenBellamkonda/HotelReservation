@@ -8,7 +8,10 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class ReservationService {
-    private Integer DefaultplusDays=7;
+    private static final ReservationService SINGLETON=new ReservationService();
+    public static ReservationService getSingleton(){
+        return SINGLETON;
+    }
 
     private Map<String ,IRoom> rooms=new HashMap<String, IRoom>();
     private Map<String,Collection<Reservation>> reservations=new HashMap<String, Collection<Reservation>>();
@@ -30,6 +33,9 @@ public class ReservationService {
         reservations.put(customer.getEmail(customer), customerReservations);
         return reservation;
 
+    }
+    public Collection<IRoom> getAllRooms(){
+        return rooms.values();
     }
     public Collection<IRoom> findRooms(Date CheckInDate, Date CheckOutDate){
         return findAvailableRooms(CheckInDate,CheckOutDate);
